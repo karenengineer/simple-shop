@@ -1,0 +1,26 @@
+<div class="product-card-main-wrapper">
+  <div class="card-header">
+    <div class="card-status">
+      Cart({{quantity}})
+    </div>
+  </div>
+  <div class="card-body">
+    <ng-container *ngFor="let product of products">
+
+      <div class="title">{{product.name}}</div>
+      <div class="product-picture">
+        <img [src]="product.image" [alt]="product.image">
+      </div>
+      <div class="product-description">
+        {{product.description}}
+      </div>
+      <div class="price">Price: {{product.price}}$</div>
+      <div class="quantity">Qty:
+        <div class="round" (click)="addQuantity(product)">+</div>
+        <div class="qty-num">{{product.quantity}}</div>
+        <div class="round" (click)="subtractQuantity(product)">-</div>
+      </div>
+    </ng-container>
+  </div>
+  <button class="add" [disabled]="quantity < 1" (click)="addToCart(products)">Add To Card</button>
+</div>

@@ -1,0 +1,20 @@
+<div class="login-main-wrapper">
+  <div class="form-wrapper">
+    <div class="login-title">Login</div>
+    <form [formGroup]="signInForm" #form="ngForm" (ngSubmit)="signIn()">
+      <label for="email">Email</label>
+      <input type="text"
+             id="email"
+             class="email"
+             formControlName="email"
+             [class.error]="form.submitted && signInForm.get('email')?.errors">
+      <label for="pass">Pass</label>
+      <input type="password"
+             id="pass"
+             class="pass"
+             formControlName="password"
+             [class.error]="form.submitted && signInForm.get('password')?.errors">
+      <button type="submit">Login</button>
+    </form>
+  </div>
+</div>

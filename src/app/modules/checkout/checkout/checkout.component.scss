@@ -1,0 +1,82 @@
+.checkout-main-wrapper {
+  max-width: 375px;
+  margin: auto;
+  .card-header {
+    .card-status {
+      padding-right: 22px;
+    }
+  }
+
+  .form-title {
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 28px;
+    letter-spacing: 0;
+    text-align: left;
+    margin-bottom: 30px;
+    padding: 90px 34px 0 34px;
+  }
+
+  form {
+    padding: 0 34px;
+    display: flex;
+    flex-direction: column;
+
+    input {
+      margin-bottom: 18px;
+    }
+
+    .pay-btn {
+      margin-top: 40px;
+    }
+  }
+
+  .personal-info-main-wrapper {
+    padding: 0 34px;
+
+    .personal-info-wrapper {
+      background-color: #F0F0F0;
+      padding: 12px 10px;
+      margin-bottom: 30px;
+      margin-top: 10px;
+
+      .personal-info-title {
+      }
+
+      .personal-info {
+        font-size: 12px;
+        font-weight: 400;
+        line-height: 14px;
+        letter-spacing: 0;
+        text-align: left;
+        padding: 10px 0;
+      }
+    }
+  }
+
+  .order-info {
+    padding: 0 34px;
+
+    .order-number-title {
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 16px;
+      letter-spacing: 0;
+      text-align: left;
+      margin-bottom: 22px;
+    }
+
+    .order-number {
+      height: 60px;
+      background-color: #F0F0F0;
+      font-size: 36px;
+      font-weight: 400;
+      line-height: 42px;
+      letter-spacing: 0;
+      justify-content: center;
+      align-items: center;
+      display: flex;
+    }
+  }
+
+}

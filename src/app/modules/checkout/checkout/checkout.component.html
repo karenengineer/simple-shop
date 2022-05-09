@@ -1,0 +1,97 @@
+<div class="checkout-main-wrapper">
+    <div class="card-header">
+        <div class="card-status">
+            <a routerLink="/cart">Cart({{quantity}})</a>
+        </div>
+    </div>
+    <div *ngIf="step !== steps.stepThree" class="form-title">Checkout</div>
+
+    <ng-container *ngIf="step === steps.stepOne">
+        <ng-container *ngTemplateOutlet="stepOne"></ng-container>
+    </ng-container>
+    <ng-container *ngIf="step === steps.stepTwo">
+        <ng-container *ngTemplateOutlet="stepTwo"></ng-container>
+    </ng-container>
+    <ng-container *ngIf="step === steps.stepThree">
+        <ng-container *ngTemplateOutlet="stepThree"></ng-container>
+    </ng-container>
+</div>
+
+<ng-template #stepOne>
+    <form [formGroup]="checkoutForm" #form="ngForm" (ngSubmit)="submitForm()">
+
+        <label>Email</label>
+        <input
+                formControlName="email"
+                type="text"
+                [class.error]="form.submitted && checkoutForm.get('email')?.errors">
+
+        <label>FullName</label>
+        <input
+                formControlName="fullName"
+                type="text"
+                [class.error]="form.submitted && checkoutForm.get('fullName')?.errors">
+
+        <label>Address</label>
+        <input
+                formControlName="address"
+                type="text"
+                [class.error]="form.submitted && checkoutForm.get('address')?.errors">
+
+        <label>Phone</label>
+        <input
+                formControlName="phone"
+                type="text"
+                [class.error]="form.submitted && checkoutForm.get('phone')?.errors">
+
+        <label>Credit Card Number</label>
+        <input
+                formControlName="cardNumber"
+                type="text"
+                [class.error]="form.submitted && checkoutForm.get('cardNumber')?.errors">
+
+        <label>CVV</label>
+        <input
+                formControlName="cvv"
+                type="text"
+                [class.error]="form.submitted && checkoutForm.get('cvv')?.errors">
+
+        <button
+                type="submit"
+                class="pay-btn"
+        >Pay {{amount}}$
+        </button>
+    </form>
+</ng-template>
+
+<ng-template #stepTwo>
+    <div class="personal-info-main-wrapper">
+        <div class="personal-info-title">Personal information</div>
+        <div class="personal-info-wrapper">
+            <div class="personal-info">{{checkoutForm.get('fullName')?.value}}</div>
+            <div class="personal-info">{{checkoutForm.get('address')?.value}}</div>
+            <div class="personal-info">Tel: {{checkoutForm.get('phone')?.value}}</div>
+            <div class="personal-info">Credit Card: {{cardNumber[0]}}&nbsp; {{cardNumber[1]}}&nbsp; {{cardNumber[2]}}&nbsp; {{cardNumber[3]}}</div>
+            <div class="personal-info">Cvv {{checkoutForm.get('cvv')?.value}}</div>
+        </div>
+        <button
+                type="button"
+                class="pay-btn"
+                (click)="order()"
+        >Pay {{amount}}$
+        </button>
+    </div>
+</ng-template>
+
+<ng-template #stepThree>
+    <div class="form-title">
+        Thank you for your purchase
+    </div>
+    <div class="order-info">
+        <div class="order-number-title">Your order number</div>
+        <div class="order-number">
+            {{orderNumber}}
+        </div>
+    </div>
+
+</ng-template>

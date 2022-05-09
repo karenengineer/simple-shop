@@ -1,0 +1,66 @@
+@import "./assets/styles/variables";
+
+body {
+  font-family: Roboto, sans-serif;
+  margin: 0;
+}
+
+input {
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 14px;
+  letter-spacing: 0;
+  text-align: left;
+  background-color: $lightGrey;
+  height: 35px;
+  padding-left: 10px;
+  border: none;
+  outline: none;
+  &:focus {
+    box-shadow: 0 0 4px rgba(90, 93, 99, 0.14), 0 2px 14px rgba(238, 169, 65, 0.21);
+  }
+  &.error {
+    border: 1px solid red;
+  }
+}
+
+label {
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 14px;
+  letter-spacing: 0;
+  margin-bottom: 6px;
+}
+
+button {
+  background: $yellow;
+  border: none;
+  height: 35px;
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 21px;
+  width: 100%;
+  &:hover {
+    box-shadow: 0 0 4px rgba(90, 93, 99, 0.14), 0 2px 14px rgba(238, 169, 65, 0.21);
+  }
+  &:disabled {
+    background-color: $lightGrey;
+    cursor: not-allowed;
+  }
+}
+
+.card-header {
+  position: fixed;
+  width: 375px;
+  height: 36px;
+  background-color: $lightGrey;
+  text-align: right;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 16px;
+  letter-spacing: 0;
+  display: flex;
+  align-items: center;
+  justify-content: end;
+}
